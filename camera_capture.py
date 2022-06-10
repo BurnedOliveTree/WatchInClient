@@ -7,10 +7,10 @@ import logging
 
 
 class CameraCapture(Screen):
-    def __init__(self, capture: cv2.VideoCapture, fps: int, **kwargs):
+    def __init__(self, fps: int, **kwargs):
         super().__init__(**kwargs)
         self.layout = Image()
-        self.capture = capture
+        self.capture = cv2.VideoCapture(0)
         Clock.schedule_interval(self.update, 1.0 / fps)
         self.add_widget(self.layout)
 
@@ -24,3 +24,9 @@ class CameraCapture(Screen):
             self.layout.texture = image_texture
         else:
             logging.warning("The frame of the camera could not be captured!")
+    
+    def on_stop(self):
+        self.capture.release()
+    
+    def __del__(self):
+        self.on_stop()

@@ -12,8 +12,7 @@ class WatchInClient(App):
     def build(self):
         self.menu = MenuScreen()
         self.login = LoginScreen(name='login')
-        self.capture = cv2.VideoCapture(0)
-        self.camera = CameraCapture(capture=self.capture, fps=30, name='camera')
+        self.camera = CameraCapture(fps=30, name='camera')
 
         self.manager = ScreenManager()
         self.manager.add_widget(self.menu)
@@ -22,7 +21,7 @@ class WatchInClient(App):
         return self.manager
 
     def on_stop(self):
-        self.capture.release()
+        self.camera.on_stop()
 
 
 if __name__ == '__main__':
