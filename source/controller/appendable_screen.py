@@ -1,13 +1,17 @@
+from typing import Any, List
 from kivy.uix.label import Label
+
 from controller.switchable_screen import SwitchableScreen
 
 
 class AppendableScreen(SwitchableScreen):
-    def __init__(self, name: str, **kwargs):
+    def __init__(self, name: str, content: List[str] = [], **kwargs):
         super().__init__(name=name, **kwargs)
+        self.append([Label(text=child) for child in content])
     
-    def append(self, child):
-        self.children[0].add_widget(child)
+    def append(self, children: List[Any]):
+        for child in children:
+            self.children[0].add_widget(child)
     
     def clear(self, childType):
         for child in reversed(self.children[0].children):

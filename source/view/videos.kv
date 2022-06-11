@@ -9,7 +9,7 @@ BoxLayout:
         orientation: 'horizontal'
         Button:
             text: 'Add'
-            on_press: root.parent.append(Label(text='Video'))
+            on_press: root.parent.append([Label(text='Video')])
         Button:
             text: 'Clear'
             on_press: root.parent.clear(Label)
