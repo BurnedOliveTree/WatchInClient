@@ -2,9 +2,7 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 import logging
 
-from camera_capture import CameraCapture
-from login import LoginScreen
-from menu import MenuScreen
+from controller import CameraCapture, LoginScreen, MenuScreen
 
 
 class WatchInClient(App):

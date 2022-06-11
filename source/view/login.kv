@@ -1,0 +1,22 @@
+BoxLayout:
+    padding: 64
+    spacing: 64
+    orientation: 'vertical'
+    Label:
+        text: 'Username'
+    TextInput:
+        multiline: False
+    Label:
+        text: 'Password'
+    TextInput:
+        password: True
+        multiline: False
+    BoxLayout:
+        spacing: 64
+        orientation: 'horizontal'
+        Button:
+            text: 'Submit'
+            # TODO on_press
+        Button:
+            text: 'Back'
+            on_press: root.parent.switch_screen('menu', False)
