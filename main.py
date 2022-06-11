@@ -1,4 +1,3 @@
-import cv2
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 import logging
@@ -10,7 +9,7 @@ from menu import MenuScreen
 
 class WatchInClient(App):
     def build(self):
-        self.menu = MenuScreen()
+        self.menu = MenuScreen(name='menu')
         self.login = LoginScreen(name='login')
         self.camera = CameraCapture(fps=30, name='camera')
 

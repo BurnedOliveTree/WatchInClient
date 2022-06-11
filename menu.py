@@ -6,7 +6,7 @@ from kivy.uix.screenmanager import Screen
 class MenuScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.layout = BoxLayout()
+        self.layout = BoxLayout(padding=64, spacing=64)
         login_button = Button(text='Login')
         camera_button = Button(text='Camera')
         login_button.bind(on_press=lambda instance: self.switch_screen('login', True))
