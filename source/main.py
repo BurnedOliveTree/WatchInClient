@@ -2,13 +2,13 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 import logging
 
-from controller import CameraCapture, LoginScreen, MenuScreen
+from controller import CameraCapture, SwitchableScreen
 
 
 class WatchInClient(App):
     def build(self):
-        self.menu = MenuScreen(name='menu')
-        self.login = LoginScreen(name='login')
+        self.menu = SwitchableScreen(name='menu')
+        self.login = SwitchableScreen(name='login')
         self.camera = CameraCapture(fps=30, name='camera')
 
         self.manager = ScreenManager()
