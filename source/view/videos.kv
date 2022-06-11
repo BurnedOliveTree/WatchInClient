@@ -1,0 +1,17 @@
+#:import Label kivy.uix.label.Label
+
+BoxLayout:
+    padding: 64
+    spacing: 64
+    orientation: 'vertical'
+    BoxLayout:
+        spacing: 64
+        orientation: 'horizontal'
+        Button:
+            text: 'Add'
+            on_press: root.parent.append(Label(text='Video'))
+        Button:
+            text: 'Clear'
+            on_press: root.parent.clear(Label)
+    Label:
+        text: 'hello'
