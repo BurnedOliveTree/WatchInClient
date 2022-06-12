@@ -5,10 +5,12 @@ BoxLayout:
     Label:
         text: 'Username'
     TextInput:
+        id: username
         multiline: False
     Label:
         text: 'Password'
     TextInput:
+        id: password
         password: True
         multiline: False
     BoxLayout:
@@ -16,7 +18,7 @@ BoxLayout:
         orientation: 'horizontal'
         Button:
             text: 'Submit'
-            # TODO on_press
+            on_press: root.parent.login()
         Button:
             text: 'Back'
             on_press: root.parent.switch_screen('menu', False)

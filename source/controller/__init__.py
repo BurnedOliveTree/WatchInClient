@@ -1,3 +1,4 @@
 from controller.appendable_screen import AppendableScreen
 from controller.camera_capture import CameraCapture
+from controller.login_screen import LoginScreen
 from controller.switchable_screen import SwitchableScreen
